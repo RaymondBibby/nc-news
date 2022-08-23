@@ -23,3 +23,11 @@ export const fetchArticlesWithQuery = async (queryStr) => {
 	const { data } = articles;
 	return data;
 };
+
+export const fetchArticleById = async (article_id) => {
+	const article = await axios.get(
+		`https://be-nc-news-rayb.herokuapp.com/api/articles/${article_id}`
+	);
+	const { data } = article;
+	return data;
+};
