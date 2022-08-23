@@ -15,7 +15,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Homescreen />} />
 					<Route path="/api/articles" element ={<Articles />} />
-					<Route path="/api/articles/:topic_slug" element={<ArticlesByTopic/>} />
+					<Route path="/api/articles/topics/:topic_slug" element={<ArticlesByTopic/>} />
 					<Route path="/api/articles/:article_id" element ={<ArticlesById/>} />
 					<Route path="/api/users" element={<Users />} />
 					

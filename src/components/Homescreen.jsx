@@ -12,7 +12,6 @@ const Homescreen = () => {
         })
     }, [])
 
-    console.log(topics);
     return (
         <>
             <section>
@@ -25,7 +24,7 @@ const Homescreen = () => {
                 <p className="topicButton">
                 {topics.map((topic)=> {
                     return (
-                        <Link to={`/api/articles/${topic.slug}`}>
+                        <Link to={`/api/articles/topics/${topic.slug}`}>
                             <button key={topic.description}>
                                 
                                 {topic.slug}
