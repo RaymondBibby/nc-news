@@ -2,6 +2,32 @@
   text-align: center;
 }
 
+#newsSiteLogo {
+height:4rem;
+align-self: flex-start
+}
+
+.navbarSection {
+  display: flex;
+  justify-content: space-around;
+  align-self: flex-end;
+  justify-content: flex-start;
+  padding: 5px;
+  
+}
+
+.topicButton {
+  display: flex;
+  justify-content: space-around
+}
+
+
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 
 /* Article Card Styling & Layout */
 .articleCard_wrapper {

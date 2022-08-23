@@ -2,7 +2,7 @@ const ArticlesQuery = () => {
     return (
         <>
         <div>
-            Query Menu!
+            Query Menu Functionality to be adedd later
         </div>
         </>
     )
