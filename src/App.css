@@ -2,37 +2,102 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* Article Card Styling & Layout */
+.articleCard_wrapper {
+  display: flex; 
+  flex-direction:column; 
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+  
 }
 
-.App-link {
-  color: #61dafb;
+.articleCard {
+  border: 3px solid  black;
+  margin-top: 10px;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.articleCard__title {
+  border: 3px solid  rgb(226, 220, 49);
+  margin-top: 5px;
+  margin-bottom: 7px;
 }
+
+.articleCard__info--inline {
+  border: 3px solid  rgb(217, 16, 16);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-grow: 1
+  
+}
+
+.articleCard__info--inline p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.articleCard__body--wrap {
+  border: 3px solid  rgb(28, 32, 224);
+  margin-top: 5px;
+  margin-bottom:5px;
+}
+
+.article_card__upvotes--inline {
+  border: 3px solid  rgb(44, 234, 91);
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* Mobile design features */
+@media only screen and (min-width: 600px) {
+  #articleCard li{
+    text-decoration: none none;
+  }
+  
+  /* Article Card Styling & Layout */
+  .articleCard {
+    border: 3px solid  black;
+    margin-top: 10px;
+  }
+  
+  .articleCard__title {
+    border: 3px solid  rgb(226, 220, 49);
+    margin-top: 5px;
+    margin-bottom: 7px;
+  }
+  
+  .articleCard__info--inline {
+    border: 3px solid  rgb(217, 16, 16);
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+  }
+  
+  .articleCard__info--inline p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .articleCard__body--wrap {
+    border: 3px solid  rgb(28, 32, 224);
+    margin-top: 5px;
+    margin-bottom:5px;
+  }
+  
+  .article_card__upvotes--inline {
+    border: 3px solid  rgb(44, 234, 91);
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .article_card__upvotes--inline button {
+   
+  }
+} 
