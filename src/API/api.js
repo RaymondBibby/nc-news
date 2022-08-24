@@ -31,3 +31,12 @@ export const fetchArticleById = async (article_id) => {
 	const { data } = article;
 	return data;
 };
+
+export const patchVotesByArticleId = async (article_id, inc) => {
+	const patchedVote = await axios.patch(
+		`https://be-nc-news-rayb.herokuapp.com/api/articles/${article_id}`,
+		{ inc_votes: `${inc}` }
+	);
+	const { data } = patchedVote;
+	return data;
+};

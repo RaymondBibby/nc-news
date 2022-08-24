@@ -14,12 +14,7 @@ const Homescreen = () => {
 
     return (
         <>
-            <section>
-                <h1>Featured No.1 Article!</h1>
-                <h3>Feature to be added!</h3>
-                <TopArticle />
-            </section>
-            <section>
+        <section>
                 <h1>Browse by topics:</h1>
                 <p className="topicButton">
                 {topics.map((topic)=> {
@@ -35,6 +30,12 @@ const Homescreen = () => {
                 </p>
 
             </section>
+            <section>
+                <h1>Featured No.1 Article!</h1>
+                <h3>Feature to be added!</h3>
+                <TopArticle />
+            </section>
+            
         </>
     )
 }

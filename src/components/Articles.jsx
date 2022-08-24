@@ -6,6 +6,7 @@ import ArticleCard from "./ArtlicleCard"
 const Articles = () => {
 const [articles, setArticles] = useState([])
 
+
 useEffect(()=> {
     fetchArticles().then(({articles})=> {
         setArticles(articles)
@@ -23,7 +24,8 @@ useEffect(()=> {
                 return (
                    <ArticleCard 
                    key={article.article_id}
-                   article={article}/> 
+                   article={article}
+                   /> 
                 )
         })}
         
