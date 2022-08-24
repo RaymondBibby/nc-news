@@ -31,3 +31,24 @@ export const fetchArticleById = async (article_id) => {
 	const { data } = article;
 	return data;
 };
+
+export const fetchCommentsById = async (article_id) => {
+	const comments = await axios.get(
+		`https://be-nc-news-rayb.herokuapp.com/api/articles/${article_id}/comments`
+	);
+
+	const { data } = comments;
+	return data;
+};
+
+export const postCommentById = async (article_id, body, user) => {
+	const request_body = { username: user, body };
+	console.log(request_body, article_id);
+	const comment = await axios.post(
+		`https://be-nc-news-rayb.herokuapp.com/api/articles/${article_id}/comments`,
+		request_body
+	);
+
+	const { data } = comment;
+	return data;
+};

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import CommentCard from "./CommentCard"
 
 const ArticleCard = ({article}) => {
   if (article === undefined) {
@@ -43,6 +44,9 @@ const ArticleCard = ({article}) => {
                 }}>
                         Downvote
                 </button>
+            </section>
+            <section className="commentCard">
+                <CommentCard article_id={article_id}/>
             </section>
             
         </div>

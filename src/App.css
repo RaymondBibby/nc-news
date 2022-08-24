@@ -29,6 +29,50 @@ align-self: flex-start
   justify-content: space-around;
 }
 
+.commentCard h1 {
+  margin-top: 5px;
+}
+
+.commentCardHeader {
+  border: 3px dashed pink;
+}
+
+.commentInfo {
+  display: flex;
+  justify-content: space-around;
+}
+
+.commentInfoBox {
+  border:3px dashed rgb(217, 16, 16);
+}
+
+.commentBody {
+  border: 3px dashed purple;
+}
+
+.commentInput {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between
+
+}
+
+.commentInput_Box {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  flex-shrink: 1
+}
+
+.commentText {
+  width: auto;
+  max-width: 500px;
+}
+
+.commentSubmitButton {
+  align-self: center;
+}
+
 /* Article Card Styling & Layout */
 .articleCard_wrapper {
   display: flex; 
@@ -125,5 +169,9 @@ align-self: flex-start
   
   .article_card__upvotes--inline button {
    
+  }
+
+  .commentText {
+    max-width: 400px;
   }
 } 
