@@ -2,32 +2,26 @@
   text-align: center;
 }
 
+.header {
+  display: flex;
+  flex-direction: row;
+}
+
 #newsSiteLogo {
 height:4rem;
-align-self: flex-start
+flex-grow: 2;
 }
 
 .navbarSection {
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
-  align-self: flex-end;
-  justify-content: flex-start;
+  align-items:center;
   padding: 5px;
+  flex-grow:3
   
 }
 
-.topicButton {
-  display: flex;
-  justify-content: space-around
-}
-
-
-
-.header {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
 
 /* Article Card Styling & Layout */
 .articleCard_wrapper {
@@ -41,7 +35,6 @@ align-self: flex-start
 .articleCard {
   border: 3px solid  black;
   margin-top: 10px;
-  
 }
 
 .articleCard__title {
