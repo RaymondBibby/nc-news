@@ -1,7 +1,6 @@
 import CommentCardSingleArticleView from "./CommentCardSingleArticleView"
 import { useState, useEffect } from "react"
-import { fetchCommentsById } from "../API/api"
-import { patchVotesByArticleId } from "../API/api"
+import { fetchCommentsById, patchVotesByArticleId, postCommentById  } from "../API/api"
 
 
 const SingleArticleCard = ({article}) => {
@@ -13,6 +12,8 @@ const SingleArticleCard = ({article}) => {
     const [err, setErr] = useState(null)
     const [comments, setComments] = useState({})
     const [isLoading, setIsLoading] =useState(true)
+    const [bodyTextArea, setBodyTextArea] = useState("")
+    
 
     const handleVoteClickUp = (event) => {
         event.preventDefault()
@@ -41,14 +42,39 @@ const SingleArticleCard = ({article}) => {
         
     }    
 
+    const handleCommentSubmit = (event) => {
+        setIsLoading(true)
+
+        if (bodyTextArea.length < 1) {
+            return <>Invalid Comment</>
+        }
+
+        alert("Comment Posted Succesfully!")
+        
+        event.preventDefault()
+        
+        setBodyTextArea("")
+        
+        postCommentById(article_id, bodyTextArea, "jessjelly").then(()=> {
+            setIsLoading(false)
+
+        })
+        
+    }
+ 
+
+    const handleBodyChange = (event) => {
+        setBodyTextArea(event.target.value)
+    }
+
     useEffect(()=> {
         fetchCommentsById(article_id)
         .then(({comments}) => {
-            setComments(comments)
+        setComments(comments)
         setIsLoading(false)
         })
         
-    }, [article_id])
+    }, [article_id, isLoading])
 
 
     if (err) return <p>{err}</p>
@@ -90,9 +116,31 @@ const SingleArticleCard = ({article}) => {
         <div>
                 <h1 className="commentCardHeader">Comments
                 </h1>
-            </div>
+        </div>
+        <div className="commentInput">
+                <form 
+                   onSubmit={event => {
+                       handleCommentSubmit(event)
+                       
+                   }}
+                   className="commentInput_Box"
+                   >
+                   <textarea 
+                   className="commentText"
+                   name="commentText"
+                   type="text" 
+                   value={bodyTextArea}
+                   onChange={handleBodyChange}
+                   
+                   >
+
+                   </textarea>
+                   
+                   <button className="commentSubmitButton">Post Comment</button>
+                </form>
+        </div>  
             {comments.map((comment)=> {
-                return <CommentCardSingleArticleView comment={comment} />
+                return <CommentCardSingleArticleView comment={comment} key={comment.comment_id}/>
             })}
             </section>
         
