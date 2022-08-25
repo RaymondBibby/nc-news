@@ -42,14 +42,13 @@ export const fetchCommentsById = async (article_id) => {
 };
 
 export const postCommentById = async (article_id, body, user) => {
-	const request_body = { username: user, body };
-	console.log(request_body, article_id);
 	const comment = await axios.post(
-		`https://be-nc-news-rayb.herokuapp.com/api/articles/20/comments`,
-		request_body
+		`https://be-nc-news-rayb.herokuapp.com/api/articles/${article_id}/comments`,
+		{ article_id: article_id, username: user, body: body }
 	);
 
 	const { data } = comment;
+	return data;
 };
 
 export const patchVotesByArticleId = async (article_id, inc) => {
