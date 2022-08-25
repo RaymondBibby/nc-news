@@ -13,7 +13,7 @@ const SingleArticleCard = ({article}) => {
     const [comments, setComments] = useState({})
     const [isLoading, setIsLoading] =useState(true)
     const [bodyTextArea, setBodyTextArea] = useState("")
-    const [postedComment, setPostedComment] = useState("")
+    
 
     const handleVoteClickUp = (event) => {
         event.preventDefault()
@@ -48,6 +48,9 @@ const SingleArticleCard = ({article}) => {
         if (bodyTextArea.length < 1) {
             return <>Invalid Comment</>
         }
+
+        alert("Comment Posted Succesfully!")
+        
         event.preventDefault()
         
         setBodyTextArea("")
@@ -118,7 +121,7 @@ const SingleArticleCard = ({article}) => {
                 <form 
                    onSubmit={event => {
                        handleCommentSubmit(event)
-                       alert("Comment Posted Succesfully!")
+                       
                    }}
                    className="commentInput_Box"
                    >
