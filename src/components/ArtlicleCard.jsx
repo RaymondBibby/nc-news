@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import CommentCard from "./CommentCard"
 import { patchVotesByArticleId } from "../API/api"
 import { useState } from "react"
 
@@ -70,6 +71,9 @@ const ArticleCard = ({article}) => {
                 }}>
                         Downvote
                 </button>
+            </section>
+            <section className="commentCard">
+                <CommentCard article_id={article_id}/>
             </section>
             
         </div>

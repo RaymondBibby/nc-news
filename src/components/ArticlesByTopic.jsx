@@ -22,7 +22,7 @@ const ArticlesByTopic = () => {
         <section> 
             <h2>Articles about {topic_slug}:</h2>
             {articles.map((article)=> {
-                return <ArticleCard article={article}/>
+                return <ArticleCard article={article} key={article.article_id}/>
             })}
         </section>
         </>

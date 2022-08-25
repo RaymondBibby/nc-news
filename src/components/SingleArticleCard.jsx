@@ -1,13 +1,18 @@
-import { useState } from "react"  
-import { patchVotesByArticleId } from "../API/api"      
+import CommentCardSingleArticleView from "./CommentCardSingleArticleView"
+import { useState, useEffect } from "react"
+import { fetchCommentsById } from "../API/api"
+import { patchVotesByArticleId } from "../API/api"
+
 
 const SingleArticleCard = ({article}) => {
 
-    const {title, topic, author, body, comment_count, created_at, votes, article_id} = article
+   const {title, topic, author, body, comment_count, created_at, votes, article_id} = article
  
 
     const [voteCount, setVoteCount] = useState(votes)
     const [err, setErr] = useState(null)
+    const [comments, setComments] = useState({})
+    const [isLoading, setIsLoading] =useState(true)
 
     const handleVoteClickUp = (event) => {
         event.preventDefault()
@@ -36,8 +41,22 @@ const SingleArticleCard = ({article}) => {
         
     }    
 
+    useEffect(()=> {
+        fetchCommentsById(article_id)
+        .then(({comments}) => {
+            setComments(comments)
+        setIsLoading(false)
+        })
+        
+    }, [article_id])
+
+
     if (err) return <p>{err}</p>
 
+ 
+     if (isLoading === true) {
+         return <>...Loading Content</>
+     }
     return (
         <div className="singleArticleCard">
         <h2 className="articleCard__title">{title}</h2>
@@ -67,6 +86,15 @@ const SingleArticleCard = ({article}) => {
                     Downvote
             </button>
         </section>
+        <section className="commentCard">
+        <div>
+                <h1 className="commentCardHeader">Comments
+                </h1>
+            </div>
+            {comments.map((comment)=> {
+                return <CommentCardSingleArticleView comment={comment} />
+            })}
+            </section>
         
     </div>
     )

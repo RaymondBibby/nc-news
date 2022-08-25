@@ -32,6 +32,26 @@ export const fetchArticleById = async (article_id) => {
 	return data;
 };
 
+export const fetchCommentsById = async (article_id) => {
+	const comments = await axios.get(
+		`https://be-nc-news-rayb.herokuapp.com/api/articles/${article_id}/comments`
+	);
+
+	const { data } = comments;
+	return data;
+};
+
+export const postCommentById = async (article_id, body, user) => {
+	const request_body = { username: user, body };
+	console.log(request_body, article_id);
+	const comment = await axios.post(
+		`https://be-nc-news-rayb.herokuapp.com/api/articles/20/comments`,
+		request_body
+	);
+
+	const { data } = comment;
+};
+
 export const patchVotesByArticleId = async (article_id, inc) => {
 	const patchedVote = await axios.patch(
 		`https://be-nc-news-rayb.herokuapp.com/api/articles/${article_id}`,
