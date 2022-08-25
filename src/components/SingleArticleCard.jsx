@@ -1,35 +1,58 @@
 import CommentCardSingleArticleView from "./CommentCardSingleArticleView"
-import { useEffect, useState } from "react"
+import { useState, useEffect } from "react"
 import { fetchCommentsById } from "../API/api"
+import { patchVotesByArticleId } from "../API/api"
 
 
 const SingleArticleCard = ({article}) => {
 
    const {title, topic, author, body, comment_count, created_at, votes, article_id} = article
  
-     const handleVoteClick = (event) => {
-        const target = event.target.innerText
-       
+
+    const [voteCount, setVoteCount] = useState(votes)
+    const [err, setErr] = useState(null)
+    const [comments, setComments] = useState({})
+    const [isLoading, setIsLoading] =useState(true)
+
+    const handleVoteClickUp = (event) => {
         event.preventDefault()
-     }
 
-     const [comments, setComments] = useState({})
-     const [isLoading, setIsLoading] =useState(true)
- 
-     useEffect(()=> {
-         fetchCommentsById(article_id)
-         .then(({comments}) => {
-             setComments(comments)
-         setIsLoading(false)
-         })
+        setVoteCount((prevVotes) => prevVotes + 1)
 
-         console.log(comments);
-         
-         
+        setErr(null);
+
+        patchVotesByArticleId(article_id, 1)
+        .catch((err) => {
+            setVoteCount((prevVotes) => prevVotes - 1)
+            setErr(('Something went wrong with your up-vote! Please try again'))
+        })
+    }
+
+    const handleVoteClickDown = (event) => {
+        event.preventDefault()
+
+        setVoteCount((prevVotes)=> prevVotes - 1)
         
-     }, [article_id])
+        patchVotesByArticleId(article_id, -1)
+        .catch((err)=> {
+            setVoteCount((prevVotes)=> prevVotes + 1)
+            setErr(('Something went wrong with your down-vote! Please try again'))
+        })
+        
+    }    
 
-     console.log(comments);
+    useEffect(()=> {
+        fetchCommentsById(article_id)
+        .then(({comments}) => {
+            setComments(comments)
+        setIsLoading(false)
+        })
+        
+    }, [article_id])
+
+
+    if (err) return <p>{err}</p>
+
  
      if (isLoading === true) {
          return <>...Loading Content</>
@@ -50,14 +73,15 @@ const SingleArticleCard = ({article}) => {
         
         
         <section className="article_card__upvotes--inline">
-            <p>Number of votes: {votes}</p>
+            <p>Number of votes: {voteCount}</p>
             <button type="submit" onClick={event => {
-                    handleVoteClick(event)
+                    handleVoteClickUp(event)
                 }}>
                 Upvote 
             </button>
+
             <button type="submit" onClick={event => {
-                // handleVoteClick(event)
+                handleVoteClickDown(event)
             }}>
                     Downvote
             </button>

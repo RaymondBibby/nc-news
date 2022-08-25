@@ -25,10 +25,10 @@ const CommentCard = ({article_id}) => {
 
         postCommentById(article_id, commentToPost, "rogersop")
         .then((resp)=> {
-            console.log(resp, "req response");
+            
         })
         .catch((err)=> {
-            console.log(err);
+           
         })
 
         
