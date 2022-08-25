@@ -32,6 +32,7 @@ export const fetchArticleById = async (article_id) => {
 	return data;
 };
 
+
 export const fetchCommentsById = async (article_id) => {
 	const comments = await axios.get(
 		`https://be-nc-news-rayb.herokuapp.com/api/articles/${article_id}/comments`
@@ -51,5 +52,13 @@ export const postCommentById = async (article_id, body, user) => {
 
 	const { data } = comment;
 	console.log(data);
+} 
+
+export const patchVotesByArticleId = async (article_id, inc) => {
+	const patchedVote = await axios.patch(
+		`https://be-nc-news-rayb.herokuapp.com/api/articles/${article_id}`,
+		{ inc_votes: `${inc}` }
+	);
+	const { data } = patchedVote;
 	return data;
 };
