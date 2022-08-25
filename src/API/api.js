@@ -45,10 +45,11 @@ export const postCommentById = async (article_id, body, user) => {
 	const request_body = { username: user, body };
 	console.log(request_body, article_id);
 	const comment = await axios.post(
-		`https://be-nc-news-rayb.herokuapp.com/api/articles/${article_id}/comments`,
+		`https://be-nc-news-rayb.herokuapp.com/api/articles/20/comments`,
 		request_body
 	);
 
 	const { data } = comment;
+	console.log(data);
 	return data;
 };
