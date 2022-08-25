@@ -1,6 +1,3 @@
-import { useEffect, useState } from "react"
-
-
 const CommentCardSingleArticleView = ({comment}) => {
     console.log(comment);
 
