@@ -1,8 +1,11 @@
 const axios = require('axios').default;
 
-export const fetchArticles = async () => {
+export const fetchArticles = async (order, sortByCat) => {
+	const queryStr = `?sort_by=${sortByCat}&order=${order}`;
+	console.log(queryStr);
+
 	const articles = await axios.get(
-		'https://be-nc-news-rayb.herokuapp.com/api/articles'
+		`https://be-nc-news-rayb.herokuapp.com/api/articles${queryStr}`
 	);
 	const { data } = articles;
 	return data;
@@ -50,6 +53,7 @@ export const postCommentById = async (article_id, body, user) => {
 	);
 
 	const { data } = comment;
+	return data;
 };
 
 export const patchVotesByArticleId = async (article_id, inc) => {
