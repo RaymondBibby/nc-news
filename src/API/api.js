@@ -60,3 +60,12 @@ export const patchVotesByArticleId = async (article_id, inc) => {
 	const { data } = patchedVote;
 	return data;
 };
+
+export const fetchUsers = async () => {
+	const users = await axios.get(
+		'https://be-nc-news-rayb.herokuapp.com/api/users'
+	);
+
+	const { data } = users;
+	return data;
+};
