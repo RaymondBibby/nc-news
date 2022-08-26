@@ -9,6 +9,11 @@ const CommentCardSingleArticleView = ({comment, setIsLoading}) => {
 
     const handleDeleteComment = () => {
         deleteCommentByCommentId(comment_id)
+        .then(()=> alert("Comment Deleted Succesfully!"))
+        .catch(()=> {
+            alert("Comment did not delete succesfully!")
+            setDisable(false)
+        })
     }
 
     if (comment.author === user) {
