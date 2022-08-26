@@ -16,7 +16,9 @@ function App() {
 
 	return (
 		<UserContext.Provider value={{user, setUser}}>
+
 		<BrowserRouter>
+			
 			<div className="App">
 				<Header />
 				<Routes>
@@ -28,8 +30,10 @@ function App() {
 					
 				</Routes>
 			</div>
+			
 		</BrowserRouter>
 		</UserContext.Provider>
+
 	);
 }
 

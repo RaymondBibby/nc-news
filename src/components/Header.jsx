@@ -6,6 +6,7 @@ import { useContext } from "react"
 const Header = () => {
     const {user, setUser} = useContext(UserContext)
 
+
     return (
         <section className="header">
             <img id="newsSiteLogo" alt="News site logo" src={logo}/>
