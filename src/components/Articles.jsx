@@ -1,27 +1,30 @@
 import { useEffect, useState } from "react"
 import { fetchArticles } from "../API/api"
-import ArticlesQuery from "./ArticlesQuery"
 import ArticleCard from "./ArtlicleCard"
 import { useContext } from "react"
 import { UserContext } from "../App"
+import QueryMenu from "./QueryMenu"
+
 
 const Articles = () => {
 const [articles, setArticles] = useState([])
+const [sortByCat, setSortByCat] = useState("")
+const [order, setOrder] = useState("")
 const {user, setUser} = useContext(UserContext)
 
 
 useEffect(()=> {
-    fetchArticles().then(({articles})=> {
+    fetchArticles(order, sortByCat).then(({articles})=> {
         setArticles(articles)
     })
-}, [])
+}, [sortByCat, order])
 
     return (
         <>
         <div>
            <h1>Articles</h1>
         </div> 
-        <ArticlesQuery/>
+        <QueryMenu setOrder={setOrder} order={order} setSortByCat={setSortByCat} sortByCat={sortByCat} />
         <div className="articleCard_wrapper">
         {articles.map((article) => {
                 return (
@@ -34,6 +37,7 @@ useEffect(()=> {
         
         </div>
         </>
+        
     )
 }
 

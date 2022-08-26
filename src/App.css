@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  text-decoration: none;
 }
 
 .header {
@@ -28,7 +29,7 @@ flex-grow: 2;
 }
 
 .commentCardHeader {
-  border: 3px dashed pink;
+  
 }
 
 .commentInfo {
@@ -37,11 +38,11 @@ flex-grow: 2;
 }
 
 .commentInfoBox {
-  border:3px dashed rgb(217, 16, 16);
+  
 }
 
 .commentBody {
-  border: 3px dashed purple;
+  
 }
 
 .commentInput {
@@ -82,13 +83,13 @@ flex-grow: 2;
 }
 
 .articleCard__title {
-  border: 3px solid  rgb(226, 220, 49);
+  
   margin-top: 5px;
   margin-bottom: 7px;
 }
 
 .articleCard__info--inline {
-  border: 3px solid  rgb(217, 16, 16);
+  
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -102,13 +103,13 @@ flex-grow: 2;
 }
 
 .articleCard__body--wrap {
-  border: 3px solid  rgb(28, 32, 224);
+  
   margin-top: 5px;
   margin-bottom:5px;
 }
 
 .article_card__upvotes--inline {
-  border: 3px solid  rgb(44, 234, 91);
+
   margin-bottom: 5px;
   display: flex;
   flex-direction: row;
@@ -128,13 +129,13 @@ flex-grow: 2;
   }
   
   .articleCard__title {
-    border: 3px solid  rgb(226, 220, 49);
+    
     margin-top: 5px;
     margin-bottom: 7px;
   }
   
   .articleCard__info--inline {
-    border: 3px solid  rgb(217, 16, 16);
+    
     display:flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -147,13 +148,13 @@ flex-grow: 2;
   }
   
   .articleCard__body--wrap {
-    border: 3px solid  rgb(28, 32, 224);
+    border: 3px solid red;
     margin-top: 5px;
     margin-bottom:5px;
   }
   
   .article_card__upvotes--inline {
-    border: 3px solid  rgb(44, 234, 91);
+    
     margin-bottom: 5px;
     display: flex;
     flex-direction: row;

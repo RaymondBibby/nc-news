@@ -1,6 +1,4 @@
 const CommentCardSingleArticleView = ({comment}) => {
-    console.log(comment);
-
          return (
              <>
              
