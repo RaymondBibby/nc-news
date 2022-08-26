@@ -6,10 +6,19 @@ import Homescreen from './components/Homescreen';
 import ArticlesByTopic from './components/ArticlesByTopic';
 import Users from './components/Users';
 import Header from './components/Header';
+import {createContext, useState} from "react"
+export const UserContext = createContext()
 
 function App() {
+
+	const [user, setUser] =useState("jessjelly")
+	
+
 	return (
+		<>
+	<UserContext.Provider value={{user, setUser}} ></UserContext.Provider>
 		<BrowserRouter>
+			
 			<div className="App">
 				<Header />
 				<Routes>
@@ -21,7 +30,10 @@ function App() {
 					
 				</Routes>
 			</div>
+			
 		</BrowserRouter>
+	<UserContext.Provider/>
+		</>
 	);
 }
 

@@ -72,26 +72,10 @@ const ArticleCard = ({article}) => {
                         Downvote
                 </button>
             </section>
-            <section className="commentCard">
-                <CommentCard article_id={article_id}/>
-            </section>
             
         </div>
     )
     }
 }
-
-/* 
-1. Title of article --> title
-2. Topic --> topic
-3. Date posted --> created_at
-4. Body (reduced characters) --> body
-5. Votes --> votes
-5.5 comment count --> comment_count 
-6. Comments (API call required)
-7. Add comment --> Button to ppost a comment (to be added)
-8.Author--> author
-9. Upvotes--> votes
-*/
 
 export default ArticleCard

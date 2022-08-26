@@ -23,7 +23,7 @@ const CommentCard = ({article_id}) => {
         event.preventDefault()
         const commentToPost = event.target[0].value;
 
-        postCommentById(article_id, commentToPost, "rogersop")
+        postCommentById(article_id, commentToPost, "jessjelly")
         .then((resp)=> {
             
         })

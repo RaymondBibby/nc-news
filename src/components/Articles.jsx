@@ -2,9 +2,12 @@ import { useEffect, useState } from "react"
 import { fetchArticles } from "../API/api"
 import ArticlesQuery from "./ArticlesQuery"
 import ArticleCard from "./ArtlicleCard"
+import { useContext } from "react"
+import { UserContext } from "../App"
 
 const Articles = () => {
 const [articles, setArticles] = useState([])
+const {user, setUser} = useContext(UserContext)
 
 
 useEffect(()=> {
