@@ -1,3 +1,4 @@
+
 const QueryMenu = ({setOrder, order, setSortByCat, sortByCat}) => {
 
 const handleSortBy = (event) => {
@@ -47,3 +48,4 @@ const handleOrder = (event) => {
 export default QueryMenu
 
  
+
