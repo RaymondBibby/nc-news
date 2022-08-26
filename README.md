@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Using my nc-news app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description of App
 
-## Available Scripts
+This front-end app **nc-news**, is the culmination of a one week solo project
+undertaken as part of the Northcoders (hence nc-news) bootcamp. The App makes
+use of a previous one week solo back-end project where we designed API's to
+serve up news and related user generated content, which is now available to
+users in the form of a responsive app. The project was created using react
+(along with may more) skills developed during the 3 week front-end section of
+the Northcoders Bootcamp.
 
-In the project directory, you can run:
+All of the the app's pages contain navigation via the main navi-bar in the app's
+header that will take you to: _Home_ _Articles_ _Users_
 
-### `npm start`
+In addition, the main header also displays the current user.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The homepage allows the user to browse the all of the news articles by topic
+(the topic bar updates automatically if new topics are added). The home page
+also includes space for a number one featured article (_watch this space_).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Articles Page: All of the articles on the articles page (and when viewing by
+topic) are clickable, and will take you to an individual article page where you
+can see the article in full, view and post comments associated with the article
+and also up and down vote the articles. The owner of any comments can also
+delete any comments that they've posted.
 
-### `npm test`
+Articles on the articles page can all be sorted, by ascending/ descending order
+and sorted by; author, title, topic, time-stamp, votes and comment count.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Users Page: The users page allows the users to see and toggle between the
+available users to post and delete comments as neccesary. The users are all
+identified by name, username and have an personal avatar.
 
-### `npm run build`
+## Front-end
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+URL front-end app: `https://nc-news-rb.netlify.app` Git Repo front-end:
+`https://github.com/RaymondBibby/nc-news`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Back-end
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Resources for the back-end:
 
-### `npm run eject`
+URL back-end API: `https://be-nc-news-rayb.herokuapp.com/api` Git Repo back-end:
+`https://github.com/RaymondBibby/be-nc-news`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## `node minimum requirements to run the project locally`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Before running the project locally please ensure that you are running at least
+node v16.15.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Running the project locally
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To run the project locally, please follow the steps outlined below:
 
-## Learn More
+1. Move to a local directory where you wish the repo to be rooted using the CL.
+2. On the CL run: `git clone https://github.com/RaymondBibby/nc-news.git`
+3. On the CL run:`cd nc-news`, this should default to the main branch.
+4. On the CL run: `npm i` to install all node dependencies.
+5. To run the project locally on your browser run: `npm start`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Note: this is a still a live project. You can think of the app as
+`still under construction`, with other features still to be added!**
