@@ -1,8 +1,11 @@
 const axios = require('axios').default;
 
-export const fetchArticles = async () => {
+export const fetchArticles = async (order, sortByCat) => {
+	const queryStr = `?sort_by=${sortByCat}&order=${order}`;
+	console.log(queryStr);
+
 	const articles = await axios.get(
-		'https://be-nc-news-rayb.herokuapp.com/api/articles'
+		`https://be-nc-news-rayb.herokuapp.com/api/articles${queryStr}`
 	);
 	const { data } = articles;
 	return data;
