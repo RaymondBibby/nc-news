@@ -1,11 +1,14 @@
 import CommentCardSingleArticleView from "./CommentCardSingleArticleView"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { fetchCommentsById, patchVotesByArticleId, postCommentById  } from "../API/api"
+import { UserContext } from "../contexts/User"
+
 
 
 const SingleArticleCard = ({article}) => {
+    const {user} = useContext(UserContext)
 
-   const {title, topic, author, body, comment_count, created_at, votes, article_id} = article
+   const {title, topic, author, body, created_at, votes, article_id} = article
  
 
     const [voteCount, setVoteCount] = useState(votes)
@@ -55,7 +58,7 @@ const SingleArticleCard = ({article}) => {
         
         setBodyTextArea("")
         
-        postCommentById(article_id, bodyTextArea, "jessjelly").then(()=> {
+        postCommentById(article_id, bodyTextArea, user).then(()=> {
             setIsLoading(false)
 
         })
@@ -140,7 +143,13 @@ const SingleArticleCard = ({article}) => {
                 </form>
         </div>  
             {comments.map((comment)=> {
-                return <CommentCardSingleArticleView comment={comment} key={comment.comment_id}/>
+                return (
+                <CommentCardSingleArticleView 
+                comment={comment} 
+                key={comment.comment_id} 
+                setIsLoading={setIsLoading} 
+                 />
+                )
             })}
             </section>
         

@@ -29,10 +29,10 @@ const Users = () => {
         return (
             <div className="UserCard">
             <h1>Users:</h1>
-            {users.map((user)=> {
+            {users.map((user, index)=> {
                 return (
                     <>
-                    <UserCard user={user} key={user.username}/>
+                    <UserCard user={user} key={`usercard${index}`}/>
                     <button 
                     key={`button.${user.username}`}
                     name={user.username}
