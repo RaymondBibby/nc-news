@@ -2,6 +2,7 @@ import SingleArticleCard from "./SingleArticleCard"
 import { useEffect, useState } from "react"
 import { fetchArticleById } from "../API/api"
 import { useParams } from "react-router-dom"
+import CatchAll from "./CatchAll"
 
 
 const ArticlesById = () => {
@@ -18,15 +19,17 @@ const ArticlesById = () => {
             setIsLoading(false)
             setArticle(article)
         })
+        .catch((err)=> {
+            alert(`${err.response.data.msg}`)
+        })
 
     }, [article_id])
    
-if(isLoading === false) {
-    return (
-      <SingleArticleCard article={article} />
-    )
-
-}
+    if(isLoading === false) {
+        return (
+        <SingleArticleCard article={article} />
+        )
+    }
 }
 
 export default ArticlesById

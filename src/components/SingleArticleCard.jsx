@@ -49,7 +49,8 @@ const SingleArticleCard = ({article}) => {
         setIsLoading(true)
 
         if (bodyTextArea.length < 1) {
-            return <>Invalid Comment</>
+            event.preventDefault()
+            return alert("There is no comment to post!")
         }
 
         alert("Comment Posted Succesfully!")
