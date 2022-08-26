@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react"
 import { fetchCommentsById, postCommentById } from "../API/api"
+import { UserContext } from "../contexts/User"
+import { useContext } from "react"
 
 const CommentCard = ({article_id}) => {
-
+    const {user} = useContext(UserContext)
     const [comment, setComments] = useState({})
     const [isLoading, setIsLoading] =useState(true)
 
@@ -22,17 +24,8 @@ const CommentCard = ({article_id}) => {
     const handleCommentSubmit = (event) => {
         event.preventDefault()
         const commentToPost = event.target[0].value;
-
-        postCommentById(article_id, commentToPost, "jessjelly")
-        .then((resp)=> {
-            
-        })
-        .catch((err)=> {
-           
-        })
-
-        
-
+        console.log(user);
+        postCommentById(article_id, commentToPost, user)
     }
 
 

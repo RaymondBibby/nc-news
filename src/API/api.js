@@ -2,7 +2,6 @@ const axios = require('axios').default;
 
 export const fetchArticles = async (order, sortByCat) => {
 	const queryStr = `?sort_by=${sortByCat}&order=${order}`;
-	console.log(queryStr);
 
 	const articles = await axios.get(
 		`https://be-nc-news-rayb.herokuapp.com/api/articles${queryStr}`
@@ -69,5 +68,14 @@ export const fetchUsers = async () => {
 	);
 
 	const { data } = users;
+	return data;
+};
+
+export const deleteCommentByCommentId = async (comment_id) => {
+	const deletion = await axios.delete(
+		`https://be-nc-news-rayb.herokuapp.com/api/comments/${comment_id}`
+	);
+
+	const { data } = deletion;
 	return data;
 };
