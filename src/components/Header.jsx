@@ -5,7 +5,7 @@ import { UserContext } from "../App"
 
 
 const Header = () => {
-    const {user, setUser} = useContext(UserContext)
+    // const {user, setUser} = useContext(UserContext)
 
     return (
         <section className="header">

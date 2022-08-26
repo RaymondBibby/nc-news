@@ -11,12 +11,12 @@ export const UserContext = createContext()
 
 function App() {
 
-	const [user, setUser] =useState("jessjelly")
+	const [user, setUser] = useState("jessjelly")
 	
 
 	return (
-		<>
-	<UserContext.Provider value={{user, setUser}} ></UserContext.Provider>
+		
+	<UserContext.Provider value={{user, setUser}} >
 		<BrowserRouter>
 			
 			<div className="App">
@@ -32,8 +32,8 @@ function App() {
 			</div>
 			
 		</BrowserRouter>
-	<UserContext.Provider/>
-		</>
+	</UserContext.Provider>
+		
 	);
 }
 

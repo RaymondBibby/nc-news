@@ -17,10 +17,10 @@ const Homescreen = () => {
         <section>
                 <h1>Browse by topics:</h1>
                 <p className="topicButton">
-                {topics.map((topic)=> {
+                {topics.map((topic, index)=> {
                     return (
                         <Link to={`/api/articles/topics/${topic.slug}`}>
-                            <button key={topic.description}>
+                            <button key={`topicButton${index}`}>
                                 
                                 {topic.slug}
                             </button>

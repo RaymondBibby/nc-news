@@ -54,7 +54,7 @@ const ArticleCard = ({article}) => {
             </section>
             <section>
                 <p className="articleCard__body--wrap">
-                  {body} 
+                  {body.slice(0,180)}...........
                 </p>
             </section>
             

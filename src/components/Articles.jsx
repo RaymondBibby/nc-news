@@ -10,7 +10,7 @@ const Articles = () => {
 const [articles, setArticles] = useState([])
 const [sortByCat, setSortByCat] = useState("")
 const [order, setOrder] = useState("")
-const {user, setUser} = useContext(UserContext)
+// const {user, setUser} = useContext(UserContext)
 
 
 useEffect(()=> {

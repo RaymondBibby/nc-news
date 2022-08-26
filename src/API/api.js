@@ -47,7 +47,7 @@ export const fetchCommentsById = async (article_id) => {
 export const postCommentById = async (article_id, body, user) => {
 	const comment = await axios.post(
 		`https://be-nc-news-rayb.herokuapp.com/api/articles/${article_id}/comments`,
-		{ article_id: article_id, username: user, body: body }
+		{ username: user, body: body }
 	);
 
 	const { data } = comment;

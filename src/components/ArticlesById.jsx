@@ -9,7 +9,7 @@ const ArticlesById = () => {
     const [article, setArticle] = useState({})
     const {article_id} = useParams()
     const [isLoading, setIsLoading] =useState(true)
-    const {user, setUser} = useContext(UserContext)
+    // const {user, setUser} = useContext(UserContext)
   
     
     
